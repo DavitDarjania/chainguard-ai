@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #0a0a0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #0a0a0f;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(0, 212, 255, 0.13), transparent 28rem),
+    radial-gradient(circle at 82% 8%, rgba(0, 255, 136, 0.1), transparent 24rem),
+    #0a0a0f;
+  color: #e8fff6;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(0, 255, 136, 0.32);
+  color: #ffffff;
+}
+
+.glass-panel {
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  background: linear-gradient(135deg, rgba(8, 18, 25, 0.78), rgba(12, 16, 30, 0.54));
+  box-shadow:
+    0 0 0 1px rgba(0, 212, 255, 0.07) inset,
+    0 24px 80px rgba(0, 0, 0, 0.42),
+    0 0 34px rgba(0, 255, 136, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.scanline-overlay::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  mix-blend-mode: screen;
+}
+
+.neon-text {
+  color: #f3fffb;
+  text-shadow:
+    0 0 12px rgba(0, 255, 136, 0.5),
+    0 0 32px rgba(0, 212, 255, 0.28);
+}
+
+.danger-noise {
+  background-image:
+    linear-gradient(90deg, rgba(255, 51, 85, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(255, 51, 85, 0.08) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
